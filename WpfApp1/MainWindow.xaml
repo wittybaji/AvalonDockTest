@@ -1,0 +1,71 @@
+﻿<Window x:Class="WpfApp1.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:local="clr-namespace:WpfApp1"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        Title="MainWindow"
+        Width="800"
+        Height="450"
+        mc:Ignorable="d">
+    <Window.Resources>
+        <Style BasedOn="{StaticResource {x:Type LayoutAnchorableTabItem}}" TargetType="{x:Type LayoutAnchorableTabItem}">
+            <Setter Property="Foreground" Value="#30A46C" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+        <Style BasedOn="{StaticResource {x:Type LayoutDocumentTabItem}}" TargetType="{x:Type LayoutDocumentTabItem}">
+            <Setter Property="Foreground" Value="#FB9A0E" />
+            <Setter Property="FontSize" Value="18" />
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <DockingManager Background="AliceBlue">
+            <LayoutRoot>
+                <LayoutPanel Orientation="Vertical">
+                    <LayoutPanel DockHeight="*">
+                        <LayoutDocumentPane x:Name="docPane">
+                            <LayoutAnchorable Title="组1标签1">
+                                <Border Background="#30A46C">
+                                    <TextBlock FontSize="32" Text="组1标签1" />
+                                </Border>
+                            </LayoutAnchorable>
+                            <LayoutAnchorable Title="组1标签2">
+                                <Border Background="#FB9A0E">
+                                    <TextBlock FontSize="32" Text="组1标签2" />
+                                </Border>
+                            </LayoutAnchorable>
+                        </LayoutDocumentPane>
+                        <LayoutAnchorablePane DockWidth="230">
+                            <LayoutAnchorable Title="组2标签1" CanAutoHide="False">
+                                <Border Background="#1677FF">
+                                    <TextBlock FontSize="32" Text="组2标签1" />
+                                </Border>
+                            </LayoutAnchorable>
+                            <LayoutAnchorable Title="组2标签2" CanAutoHide="False">
+                                <Border Background="#E5484D">
+                                    <TextBlock FontSize="32" Text="组2标签1" />
+                                </Border>
+                            </LayoutAnchorable>
+                        </LayoutAnchorablePane>
+                    </LayoutPanel>
+                    <LayoutAnchorablePaneGroup DockHeight="200">
+                        <LayoutAnchorablePane>
+                            <LayoutAnchorable Title="组3" CanAutoHide="False">
+                                <Border Background="#FB9A0E">
+                                    <TextBlock FontSize="32" Text="组3标签1" />
+                                </Border>
+                            </LayoutAnchorable>
+                        </LayoutAnchorablePane>
+                        <LayoutAnchorablePane>
+                            <LayoutAnchorable Title="组4" CanAutoHide="False">
+                                <Border Background="#E5484D">
+                                    <TextBlock FontSize="32" Text="组4标签1" />
+                                </Border>
+                            </LayoutAnchorable>
+                        </LayoutAnchorablePane>
+                    </LayoutAnchorablePaneGroup>
+                </LayoutPanel>
+            </LayoutRoot>
+        </DockingManager>
+    </Grid>
+</Window>
